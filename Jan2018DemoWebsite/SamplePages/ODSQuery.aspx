@@ -14,43 +14,32 @@
             width="1100px" OnSelectedIndexChanged="AlnumList_SelectedIndexChanged">
             <Columns>
                 <asp:TemplateField HeaderText="Id" SortExpression="AlbumId">
-                    <EditItemTemplate>
-                        <asp:TextBox runat="server" Text='<%# Eval("AlbumId") %>' ID="TextBox1" width="40px"></asp:TextBox>
-                    </EditItemTemplate>
                     <ItemTemplate>
-                        <asp:Label runat="server" Text='<%# Eval("AlbumId") %>' ID="Label1" width="40px"></asp:Label>
+                        <asp:Label runat="server" Text='<%# Eval("AlbumId") %>' ID="AlbumId" width="40px"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Title" SortExpression="Title">
-                    <EditItemTemplate>
-                        <asp:TextBox runat="server" Text='<%# Eval("Title") %>' ID="TextBox2"></asp:TextBox>
-                    </EditItemTemplate>
+                    
                     <ItemTemplate>
-                        <asp:Label runat="server" Text='<%# Eval("Title") %>' ID="Label2"></asp:Label>
+                        <asp:Label runat="server" Text='<%# Eval("Title") %>' ID="Title"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Artist" SortExpression="ArtistId">
-                    <EditItemTemplate>
-                        <asp:DropDownList ID="AritstList1" runat="server" DataSourceID="ArtistListODS" DataTextField="Name" DataValueField="ArtistId" SelectedValue='<%# Eval("ArtistId") %>' width="300px" ></asp:DropDownList>
-                    </EditItemTemplate>
+
                     <ItemTemplate>
                         <asp:DropDownList ID="AritstList1" runat="server" DataSourceID="ArtistListODS" DataTextField="Name" DataValueField="ArtistId" SelectedValue='<%# Eval("ArtistId") %>' width="300px" ></asp:DropDownList>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Year" SortExpression="ReleaseYear">
-                    <EditItemTemplate>
-                        <asp:TextBox runat="server" Text='<%# Eval("ReleaseYear") %>' ID="TextBox4" width="50px"></asp:TextBox>
-                    </EditItemTemplate>
+                    
                     <ItemTemplate>
-                        <asp:Label runat="server" Text='<%# Eval("ReleaseYear") %>' ID="Label4" width="50px"></asp:Label>
+                        <asp:Label runat="server" Text='<%# Eval("ReleaseYear") %>' ID="ReleaseYear" width="50px"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Label" SortExpression="ReleaseLabel">
-                    <EditItemTemplate>
-                        <asp:TextBox runat="server" Text='<%# Eval("ReleaseLabel") %>' ID="TextBox5"></asp:TextBox>
-                    </EditItemTemplate>
+                    
                     <ItemTemplate>
-                        <asp:Label runat="server" Text='<%# Eval("ReleaseLabel") %>' ID="Label5"></asp:Label>
+                        <asp:Label runat="server" Text='<%# Eval("ReleaseLabel") %>' ID="ReleaseLabel"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
 

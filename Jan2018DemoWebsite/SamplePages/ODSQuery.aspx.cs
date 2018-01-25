@@ -21,6 +21,12 @@ namespace Jan2018DemoWebsite.SamplePages
             GridViewRow agvrow = AlnumList.Rows[AlnumList.SelectedIndex];
             //access the data from the Gridview Template control use the .FindControl("IdControlName") to access the desired control
             string albumid = (agvrow.FindControl("AlbumId") as Label).Text;
+            //send  the extracted value to another specified page
+            //pagename?parameterset&parameterset&....
+            //? parameter set following
+            //parameter set idlabel=value
+            //& separates multiple parameter sets
+            Response.Redirect("AlbumDetails.aspx?aid=" + albumid);
         }
     }
 }
