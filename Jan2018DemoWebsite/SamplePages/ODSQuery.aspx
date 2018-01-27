@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h3>ODS Query</h3>
     <div class="row">
-        <asp:GridView ID="AlnumList" runat="server" 
+        <asp:GridView ID="AlbumList" runat="server" 
             AutoGenerateColumns="False" 
             DataSourceID="AlbumListODS" 
             AllowPaging="True"
@@ -56,5 +56,30 @@
             SelectMethod="Artists_List" 
             TypeName="ChinookSystem.BLL.ArtistController">
         </asp:ObjectDataSource>
+    </div>
+    <div class="row">
+        <asp:Button ID="CountAlbums" runat="server" Text="Count Albums" OnClick="CountAlbums_Click"  />&nbsp;&nbsp;
+        <asp:Label ID="Label1" runat="server" Text="Number of Albums per Artist"></asp:Label>
+    </div>
+    <div>
+        <asp:ListView ID="ArtistAlbumCountList" runat="server"
+              ItemType="Chinook.Data.POCOs.ArtistAlbumCounts">
+            <LayoutTemplate>
+                <div >
+                    <span runat="server" id="itemPlaceholder" />
+                </div>
+            </LayoutTemplate>
+            <ItemTemplate>
+                <div>
+                    <asp:DropDownList ID="ArtistList2" runat="server" 
+                        DataSourceID="ArtistListODS" 
+                        DataTextField="Name" DataValueField="ArtistId"
+                         SelectedValue ='<%# Item.ArtistId %>'
+                         Enabled="false">
+                    </asp:DropDownList>&nbsp;&nbsp;&nbsp;
+                    <%# Item.AlbumCount %> 
+                </div>
+            </ItemTemplate>
+        </asp:ListView>
     </div>
 </asp:Content>
