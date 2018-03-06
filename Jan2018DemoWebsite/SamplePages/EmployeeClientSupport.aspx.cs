@@ -7,19 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Jan2018DemoWebsite.SamplePages
 {
-    public partial class ODSRepeater : System.Web.UI.Page
+    public partial class EmployeeClientSupport : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void DisplayClientPlaylists_Click(object sender, EventArgs e)
-        {
-            if (!Page.IsValid)
-            {
-                messageLabel.Text = "error message";
-            }
         }
     }
 }

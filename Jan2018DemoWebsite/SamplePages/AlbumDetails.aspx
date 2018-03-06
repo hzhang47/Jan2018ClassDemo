@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h3>Passing Data</h3>
     <asp:Label ID="Label1" runat="server" Text="You passed Album ID: "></asp:Label>&nbsp;&nbsp;
-    <asp:Label ID="AlbumIDArg" runat="server"></asp:Label>
+    <asp:Label ID="AlbumIDArg" runat="server" Text="You passed Album ID: "></asp:Label>&nbsp;&nbsp;
     <div class="row">
         <asp:ListView ID="AlbumTracks" runat="server" DataSourceID="AlbumTracksODS" OnItemCommand="AlbumTracks_ItemCommand">
             <AlternatingItemTemplate>
@@ -89,7 +89,32 @@
                     </tr>
                 </table>
             </LayoutTemplate>
-            
+            <SelectedItemTemplate>
+                <tr style="background-color: #008A8C; font-weight: bold; color: #FFFFFF;">
+                    <td>
+                        <asp:Label Text='<%# Eval("TrackId") %>' runat="server" ID="TrackIdLabel" /></td>
+                    <td>
+                        <asp:Label Text='<%# Eval("Name") %>' runat="server" ID="NameLabel" /></td>
+                    <td>
+                        <asp:Label Text='<%# Eval("MediaTypeId") %>' runat="server" ID="MediaTypeIdLabel" /></td>
+                    <td>
+                        <asp:Label Text='<%# Eval("GenreId") %>' runat="server" ID="GenreIdLabel" /></td>
+                    <td>
+                        <asp:Label Text='<%# Eval("Composer") %>' runat="server" ID="ComposerLabel" /></td>
+                    <td>
+                        <asp:Label Text='<%# Eval("Milliseconds") %>' runat="server" ID="MillisecondsLabel" /></td>
+                    <td>
+                        <asp:Label Text='<%# Eval("Bytes") %>' runat="server" ID="BytesLabel" /></td>
+                    <td>
+                        <asp:Label Text='<%# Eval("UnitPrice") %>' runat="server" ID="UnitPriceLabel" /></td>
+                    <td>
+                        <asp:Button ID="SelectButton" runat="server"
+                            Text="Pick"
+                            Commandname="Select" CommandArgument='<%# Eval("TrackId") %>' />
+                    </td>
+
+                </tr>
+            </SelectedItemTemplate>
         </asp:ListView>
         <asp:ObjectDataSource ID="AlbumTracksODS" runat="server" 
             OldValuesParameterFormatString="original_{0}" 
